@@ -25,7 +25,7 @@ export default function Sidebar() {
         <div className="sidebar-heading">Interface</div>
 
         <li className="nav-item">
-          <a
+          <link
             className="nav-link collapsed"
             
             data-toggle="collapse"
@@ -34,7 +34,7 @@ export default function Sidebar() {
             aria-controls="collapseTwo">
             <i className="fas fa-fw fa-cog"></i>
             <span>Components</span>
-          </a>
+          </link>
           <div
             id="collapseTwo"
             className="collapse"
@@ -42,16 +42,16 @@ export default function Sidebar() {
             data-parent="#accordionSidebar">
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Custom Components:</h6>
-              <a className="collapse-item" href="buttons.html">Buttons</a>
-              <a className="collapse-item" href="cards.html">
+              <link className="collapse-item" href="buttons.html">Buttons</link>
+              <link className="collapse-item" href="cards.html">
                 Cards
-              </a>
+              </link>
             </div>
           </div>
         </li>
 
         <li className="nav-item">
-          <a className="nav-link collapsed"
+          <link className="nav-link collapsed"
             
             data-toggle="collapse"
             data-target="#collapseUtilities"
@@ -59,7 +59,7 @@ export default function Sidebar() {
             aria-controls="collapseUtilities">
             <i className="fas fa-fw fa-wrench"></i>
             <span>Products</span>
-          </a>
+          </link>
           <div
             id="collapseUtilities"
             className="collapse"
@@ -67,17 +67,17 @@ export default function Sidebar() {
             data-parent="#accordionSidebar">
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Custom Utilities:</h6>
-              <a className="collapse-item" href="utilities-color.html">
+              <link className="collapse-item" href="utilities-color.html">
                 Colors
-              </a>
-              <a className="collapse-item" href="utilities-border.html">
+              </link>
+              <link className="collapse-item" href="utilities-border.html">
                 Borders
-              </a>
-              <a className="collapse-item" href="utilities-animation.html">
+              </link>
+              <link className="collapse-item" href="utilities-animation.html">
                 Animations
-              </a>
-              <a className="collapse-item" href="utilities-other.html">
-                Other</a>
+              </link>
+              <link className="collapse-item" href="utilities-other.html">
+                Other</link>
             </div>
           </div>
         </li>
