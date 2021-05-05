@@ -1,6 +1,11 @@
+import {useContext} from "react";
+import UserContext from "../usercontext";
+
 import Card from "./card"
 
 export default function Dashboard(){
+    let data11 = useContext(UserContext);
+    console.log(data11)
     let data = [
         {
             workName : 'EARNINGS (MONTHLY)',

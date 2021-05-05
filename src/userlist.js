@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "./usercontext";
 
 export default function Userlist() {
+  let users = useContext(UserContext);
   return (
     <>
       <div className="container-fluid">
@@ -8,10 +11,7 @@ export default function Userlist() {
         <p className="mb-4">
           DataTables is a third party plugin that is used to generate the demo
           table below. For more information about DataTables, please visit the{" "}
-          <a  href="https://datatables.net">
-            official DataTables documentation
-          </a>
-          
+          <a href="https://datatables.net">official DataTables documentation</a>
         </p>
 
         <Link to="/usercreate">Create User</Link>
@@ -27,7 +27,8 @@ export default function Userlist() {
               <table
                 className="table table-bordered"
                 id="dataTable"
-                width="100%">
+                width="100%"
+              >
                 <thead>
                   <tr>
                     <th>Name</th>
@@ -47,34 +48,25 @@ export default function Userlist() {
                     <th>Age</th>
                     <th>Start date</th>
                     <th>Salary</th>
-                    <th>
-                      <Link to="/useredit/1">UserEdit</Link>
-                    </th>
+                    <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                    <th>
-                      <Link to="/useredit/2">UserEdit</Link>
-                    </th>
-                  </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                    <th>
-                      <Link to="/useredit/3">UserEdit</Link>
-                    </th>
-                  </tr>
+                  {users.userlist.map((obj) => {
+                    return (
+                      <tr>
+                        <td>{obj.firstName}</td>
+                        <td>{obj.lastName}</td>
+                        <td>{obj.email}</td>
+                        <td>{obj.password}</td>
+                        <td>2011/04/25</td>
+                        <td>$320,800</td>
+                        <th>
+                          <Link to="/useredit/2">UserEdit</Link>
+                        </th>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

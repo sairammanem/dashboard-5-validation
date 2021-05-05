@@ -1,4 +1,9 @@
+import {useContext} from "react";
+import UserContext from "../usercontext";
+
 export default function Card(props){
+    let data = useContext(UserContext);
+    console.log(data)
     return <>
     <div className="col-xl-3 col-md-6 mb-4">
                             <div className="card border-left-primary shadow h-100 py-2">
