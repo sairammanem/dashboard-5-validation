@@ -6,7 +6,7 @@ export default function Card(props){
     console.log(data)
     return <>
     <div className="col-xl-3 col-md-6 mb-4">
-                            <div className="card border-left-primary shadow h-100 py-2">
+                            <div className={props.data1.border}>
                                 <div className="card-body">
                                     <div className="row no-gutters align-items-center">
                                         <div className="col mr-2">

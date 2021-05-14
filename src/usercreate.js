@@ -1,4 +1,4 @@
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import UserContext from "./usercontext";
 export default function Usercreate(){
     let userData = useContext(UserContext)
@@ -8,14 +8,9 @@ export default function Usercreate(){
     let [email,setemail] = useState("");
     let [password,setpassword] = useState("");
 
-    let userSubmit = (e) => {
+    let userSubmit = async (e) => {
         e.preventDefault()
-        console.log({
-            firstName,
-            lastName,
-            email,
-            password
-        })
+        
 
         userData.setuserlist([...userData.userlist,{
             firstName,
@@ -23,7 +18,25 @@ export default function Usercreate(){
             email,
             password
         }])
+    
+   
+  await  fetch("https://606ff2b285c3f0001746f12a.mockapi.io/tabel",{
+        method: "POST",
+        body : JSON.stringify({
+            firstName,
+            lastName,
+            email,
+            password
+        }),
+         headers : {
+             "content-type" : "application/json"
+         }
+     })
     }
+
+
+    
+
     return <>
       <div className="container">
           <div className="row">

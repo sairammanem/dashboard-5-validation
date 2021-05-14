@@ -10,22 +10,26 @@ export default function Dashboard(){
         {
             workName : 'EARNINGS (MONTHLY)',
             workdoneWages : '$40,000',
-            image : 'fas fa-calendar fa-2x text-gray-300'
+            image : 'fas fa-calendar fa-2x text-gray-300',
+            border : "card border-left-primary shadow h-100 py-2"
         },
         {
             workName : "EARNINGS (ANNUAL)",
             workdoneWages : "$215,000",
-            image : 'fas fa-dollar-sign fa-2x text-gray-300'
+            image : 'fas fa-dollar-sign fa-2x text-gray-300',
+            border : "card border-left-success shadow h-100 py-2"
         },
         {
             workName : "Tasks",
             workdoneWages :"50%",
-            image : 'fas fa-clipboard-list fa-2x text-gray-300'
+            image : 'fas fa-clipboard-list fa-2x text-gray-300',
+            border : "card border-left-info shadow h-100 py-2"
         },
         {
             workName : "PENDING REQUESTS",
             workdoneWages :"18",
-            image : 'fas fa-comments fa-2x text-gray-300'
+            image : 'fas fa-comments fa-2x text-gray-300',
+            border : "card border-left-warning shadow h-100 py-2"
         }
     ]
     return <>

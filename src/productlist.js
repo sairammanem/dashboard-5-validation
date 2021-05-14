@@ -1,53 +1,50 @@
-import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {useContext,useState, useEffect} from "react";
 import UserContext from "./usercontext";
 
-export default function Userlist() {
-  let users = useContext(UserContext);
-  let [userList,setuserList] = useState([]);
-  
-  useEffect(async () => {
-    let user = await fetch("https://606ff2b285c3f0001746f12a.mockapi.io/tabel");
-    let userdata = await  user.json();
-    console.log(userdata);
-    setuserList([...userdata]);
-  },[])
+export default function Productlist() {
+    let users = useContext(UserContext);
+    let [productList,setproductList] = useState([])
+
+    useEffect(async () => {
+        let user = await fetch("https://606ff2b285c3f0001746f12a.mockapi.io/tabel");
+        let userdata = await  user.json();
+        console.log(userdata);
+        setproductList([...userdata]);
+      },[])
+
 
   return (
     <>
-      <div className="container-fluid">
-        <h1 className="h3 mb-2 text-gray-800">Tables</h1>
-        <p className="mb-4">
+      <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+        <p class="mb-4">
           DataTables is a third party plugin that is used to generate the demo
           table below. For more information about DataTables, please visit the{" "}
-          <a href="https://datatables.net">official DataTables documentation</a>
+          <a target="_blank" href="https://datatables.net">
+            official DataTables documentation.
+          </a>
         </p>
-
-        <Link to="/usercreate">Create User</Link>
-
-        <div className="card shadow mb-4">
-          <div className="card-header py-3">
-            <h6 className="m-0 font-weight-bold text-primary">
+       <Link to="/productcreate">create new user</Link>
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
               DataTables Example
             </h6>
           </div>
-          <div className="card-body">
-            
-            {
-              userList.length> 0 ? <div className="table-responsive">
-              <table
-                className="table table-bordered"
-                id="dataTable"
-                width="100%"
-              >
+          <div class="card-body">
+          {
+              productList.length> 0 ? 
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%">
                 <thead>
                   <tr>
                     <th>Name</th>
                     <th>Position</th>
-                    <th>Office</th>
+                    <th>stock</th>
                     <th>Age</th>
                     <th>Start date</th>
-                    <th>Salary</th>
+                    <th>price</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -55,16 +52,16 @@ export default function Userlist() {
                   <tr>
                     <th>Name</th>
                     <th>Position</th>
-                    <th>Office</th>
+                    <th>stock</th>
                     <th>Age</th>
                     <th>Start date</th>
-                    <th>Salary</th>
+                    <th>price</th>
                     <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  {
-                  userList.map((obj) => {
+                {
+                  productList.map((obj) => {
                     return (
                       <tr>
                         <td>{obj.name}</td>
@@ -85,6 +82,7 @@ export default function Userlist() {
             <h1>Loading..</h1>
             </>
             }
+
           </div>
         </div>
       </div>
